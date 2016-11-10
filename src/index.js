@@ -499,8 +499,8 @@ export default class extends Component {
   renderNextButton = () => {
     let button = null
 
-    if (this.state.index === this.state.total - 1 && this.props.finishbutton) {
-      return this.props.finishbutton
+    if (this.state.index === this.state.total - 1 && this.props.finishButton) {
+      return this.props.finishButton
     }
 
     if (this.props.loop || this.state.index !== this.state.total - 1) {
