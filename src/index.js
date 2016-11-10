@@ -113,6 +113,7 @@ export default class extends Component {
     loadMinimal: PropTypes.bool,
     loadMinimalSize: PropTypes.number,
     loadMinimalLoader: PropTypes.element,
+    finishButton: PropTypes.element,
     loop: PropTypes.bool,
     autoplay: PropTypes.bool,
     autoplayTimeout: PropTypes.number,
@@ -500,6 +501,8 @@ export default class extends Component {
 
     if (this.props.loop) {
       button = this.props.nextButton || <Text style={styles.buttonText}>›</Text>
+    } else if (this.props.finishButton && this.state.index === this.state.total - 1) {
+      return this.props.finishbutton
     }
 
     return (
