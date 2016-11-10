@@ -499,10 +499,12 @@ export default class extends Component {
   renderNextButton = () => {
     let button = null
 
-    if (this.props.loop) {
-      button = this.props.nextButton || <Text style={styles.buttonText}>›</Text>
-    } else if (this.props.finishButton && this.state.index === this.state.total - 1) {
+    if (this.state.index === this.state.total - 1 && this.props.finishbutton) {
       return this.props.finishbutton
+    }
+
+    if (this.props.loop || this.state.index !== this.state.total - 1) {
+      button = this.props.nextButton || <Text style={styles.buttonText}>›</Text>
     }
 
     return (
